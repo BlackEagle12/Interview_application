@@ -1,0 +1,16 @@
+﻿{{CheqAdminLogin()}}
+<div class="m-5">
+    <admin-nav></admin-nav>
+    <div class="row">
+        <div class="col-1">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="home-tab" data-toggle="pill" href="#!/admin/home" role="tab">Home</a>
+                <a class="nav-link" id="profile-tab" data-toggle="pill" href="#!/admin/profile" role="tab">Profile</a>
+            </div>
+        </div>
+        <div class="col-11">
+            <div ui-view>
+            </div>
+        </div>
+    </div>
+</div>

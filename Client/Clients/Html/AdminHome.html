@@ -1,0 +1,55 @@
+﻿<nav class="navbar bg-success rounded">
+    <div class="container-fluid">
+        <div class=" btn btn-success">Applicants</div>
+
+        <div class="dropdown">
+            <form class="d-flex">
+                <select class="btn btn-outline-light dropdown-toggle" ng-model="Applicant_dropDown" ng-change="SetApplicants()">
+                    <option class="dropdown-item" value="All" selected>All</option>
+                    <option class="dropdown-item" value="Shortlisted">Shortlisted</option>
+                    <option class="dropdown-item" value="Not-shortlisted">Not-shortlisted</option>
+                </select>
+            </form>
+        </div>
+
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" ng-model="search">
+            <button class="btn btn-outline-light mx-3" type="submit" ng-click="searchPdf()">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="table-responsive">
+    <table class="table table-success rounded" style="max-width: 100%;">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">City,State,Country</th>
+                <th scope="col">Highest Qualification</th>
+                <th scope="col">Percentage</th>
+                <th scope="col">Applying For</th>
+                <th scope="col">Skype</th>
+                <th scope="col">Interview</th>
+                <th scope="col">PDF</th>
+                <th scope="col">Is Shortlisted</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="applicant in applicants">
+                <td>{{applicant.FName}} {{applicant.LName}}</td>
+                <td>{{applicant.City}}, {{applicant.State}}, {{applicant.Country}}</td>
+                <td>{{applicant.Qualification}}</td>
+                <td>{{applicant.Percentage}}</td>
+                <td>{{applicant.ApplyingFor}}</td>
+                <td>{{applicant.SkypeId}}</td>
+                <td>{{applicant.PrefferedModeOfInterview}}</td>
+                <td><button type="button" class="btn btn-success" ng-click="GetCandidatePdf(applicant.Id)">Show</button></td>
+                <td>
+                    <form class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" ng-model="applicant.IsShortListed" ng-change="ChangeShortlisted(applicant)">
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

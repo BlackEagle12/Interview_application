@@ -1,0 +1,26 @@
+﻿<div class="row">
+    <div class="col">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active">Interview Application</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col">
+        <ul class="nav nav-tabs justify-content-end">
+            <li class="nav-item" ng-show="!login">
+                <a class="nav-link active" href="#!/admin/login">Login</a>
+            </li>
+            <li class="nav-item dropdown" ng-show="login">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{login.FName}}</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" ng-click="AdminLogout()">Logout</a>
+                    <!--<div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>-->
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<hr />
+

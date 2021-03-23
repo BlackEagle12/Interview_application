@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+				   assembly="Interview_application"
+				   namespace="Interview_application.Models"
+				   >
+
+	<class name="Candidate">
+		<id name="Id">
+			<generator class="native" />
+		</id>
+		<property name="FName" />
+		<property name="LName" />
+		<property name="Gender" />
+		<property name="Address" />
+		<property name="City" />
+		<property name="State" />
+		<property name="Country" />
+		<property name="Qualification" />
+		<property name="Percentage" />
+		<property name="ApplyingFor" />
+		<property name="ContactNo" />
+		<property name="Email" />
+		<property name="SkypeId" />
+		<property name="DateOfApplication" />
+		<property name="PrefferedModeOfInterview" />
+		<property name="IsShortListed" />
+		<property name="IsAdmin" />
+	</class>
+</hibernate-mapping>
+				
